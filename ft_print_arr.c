@@ -19,17 +19,18 @@ void	ft_print_arr(char **arr, size_t n, int in)
 
 	i = 0;
 	j = 0;
-	if (!arr)
-		return ;
-	while (i < n)
+	if (arr)
 	{
-		j = 0;
-		while (arr[i][j])
+		while (i < n)
 		{
-			write(in, &arr[i][j], 1);
-			j++;
+			j = 0;
+			while (arr[i][j])
+			{
+				write(in, &arr[i][j], 1);
+				j++;
+			}
+			write(in, "\n", 1);
+			i++;
 		}
-		write(in, "\n", 1);
-		i++;
 	}
 }

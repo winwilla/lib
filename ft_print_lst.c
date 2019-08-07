@@ -14,8 +14,6 @@
 
 static void		ft_putstr_inp(char const *s, int i)
 {
-	if (!s)
-		return ;
 	while (*s)
 		write(i, s++, 1);
 }
