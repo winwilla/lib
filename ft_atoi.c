@@ -1,20 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hdean <hdean@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 19:31:48 by hdean             #+#    #+#             */
-/*   Updated: 2019/04/29 22:58:29 by hdean            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+#include <limits.h>
 
 /* Convert a string to an integer */
-
-#define MAX_L 9223372036854775807
 
 int		ft_atoi(const char *str)
 {
@@ -30,9 +17,9 @@ int		ft_atoi(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		if (num > MAX_L && sign == 1)
+		if (num > LLONG_MAX && sign == 1)
 			return (-1);
-		else if (num > MAX_L && sign == -1)
+		else if (num > LLONG_MAX && sign == -1)
 			return (0);
 		num = num * 10 + *str - '0';
 		str++;
